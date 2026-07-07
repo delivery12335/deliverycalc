@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deliverycalc.md</title>
+    <meta
+      name="description"
+      content="deliverycalc.md is a clean delivery cost calculator for China orders. Calculate product price, shipping, agent fee, insurance, total USD, total MDL, and price per kilogram."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://delivery12335.github.io/deliverycalc/" />
+    <meta property="og:title" content="deliverycalc.md" />
+    <meta
+      property="og:description"
+      content="Calculate the real cost of an order from China before buying: shipping, insurance, agent fee, total USD and MDL."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://delivery12335.github.io/deliverycalc/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="#top" aria-label="deliverycalc.md home">
+        <span class="brand-mark"></span>
+        <span data-i18n="brand">deliverycalc.md</span>
+      </a>
+
+      <div class="language-switch" aria-label="Language switcher">
+        <button class="lang-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-button" type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">SMART ORDER TOOL</p>
+          <h1 id="hero-title" data-i18n="title">Delivery Cost Calculator</h1>
+          <p class="hero-subtitle" data-i18n="subtitle">Calculate your real order price before buying</p>
+          <a class="hero-button" href="#calculator" data-i18n="start">Start calculation</a>
+        </div>
+
+        <aside class="sample-card" aria-label="Order estimate example" data-i18n-aria-label="sampleAria">
+          <div class="sample-topline">
+            <span data-i18n="orderEstimate">ORDER ESTIMATE</span>
+            <span data-i18n="pairLabel">PAIR 02</span>
+          </div>
+          <div class="sample-row">
+            <span data-i18n="sampleProduct">Product</span>
+            <strong>$51</strong>
+          </div>
+          <div class="sample-row">
+            <span data-i18n="sampleShipping">Shipping</span>
+            <strong>$35</strong>
+          </div>
+          <div class="sample-total">
+            <span data-i18n="sampleTotal">Total</span>
+            <strong>$93.58</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="calculator-shell" id="calculator" aria-labelledby="calculator-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="sectionEyebrow">FRESH DEPTH</p>
+          <h2 id="calculator-title" data-i18n="calculatorTitle">Order calculator</h2>
+        </div>
+
+        <div class="calculator-card">
+          <form class="calculator-form" id="calculatorForm" novalidate>
+            <div class="field-grid">
+              <label class="field">
+                <span data-i18n="productPrice">Product price</span>
+                <input id="productPrice" type="number" inputmode="decimal" min="0" step="0.01" value="51" />
+              </label>
+
+              <label class="field">
+                <span data-i18n="chinaShipping">China shipping</span>
+                <input id="chinaShipping" type="number" inputmode="decimal" min="0" step="0.01" value="0" />
+              </label>
+
+              <label class="field">
+                <span data-i18n="internationalShipping">International shipping</span>
+                <input id="internationalShipping" type="number" inputmode="decimal" min="0" step="0.01" value="35" />
+              </label>
+
+              <label class="field">
+                <span data-i18n="weight">Weight</span>
+                <input id="weight" type="number" inputmode="decimal" min="0" step="0.01" value="1.2" />
+              </label>
+
+              <label class="field">
+                <span data-i18n="agentFee">Agent fee</span>
+                <input id="agentFee" type="number" inputmode="decimal" min="0" step="0.01" value="5" />
+              </label>
+
+              <label class="field">
+                <span data-i18n="insurance">Insurance</span>
+                <input id="insurance" type="number" inputmode="decimal" min="0" step="0.1" value="3" />
+              </label>
+
+              <label class="field field-wide">
+                <span data-i18n="usdRate">USD to MDL rate</span>
+                <input id="usdRate" type="number" inputmode="decimal" min="0" step="0.01" value="17.8" />
+              </label>
+            </div>
+
+            <p class="form-error" id="formError" role="alert" aria-live="polite"></p>
+
+            <div class="button-row">
+              <button class="primary-button" type="submit" data-i18n="calculate">Calculate</button>
+              <button class="secondary-button" id="clearButton" type="button" data-i18n="clear">Clear</button>
+              <button class="secondary-button" id="copyButton" type="button" data-i18n="copyResult">Copy result</button>
+            </div>
+
+            <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="results-panel">
+            <article class="result-card" id="resultCard" aria-live="polite">
+              <div class="result-empty" id="resultEmpty">
+                <span class="result-kicker" data-i18n="orderEstimate">ORDER ESTIMATE</span>
+                <p data-i18n="emptyResult">Your calculated result will appear here.</p>
+              </div>
+
+              <div class="result-content" id="resultContent" hidden>
+                <div class="verdict-pill" id="verdictText">Good deal</div>
+                <div class="result-main">
+                  <span data-i18n="totalUsd">Total USD</span>
+                  <strong id="totalUsd">$0.00</strong>
+                </div>
+                <div class="metric-grid">
+                  <div class="metric">
+                    <span data-i18n="totalMdl">Total MDL</span>
+                    <strong id="totalMdl">0.00 MDL</strong>
+                  </div>
+                  <div class="metric">
+                    <span data-i18n="pricePerKg">Price per kg</span>
+                    <strong id="pricePerKg">$0.00</strong>
+                  </div>
+                  <div class="metric">
+                    <span data-i18n="insuranceValue">Insurance value</span>
+                    <strong id="insuranceValue">$0.00</strong>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <section class="history-section" aria-labelledby="historyTitle">
+            <div class="history-heading">
+              <h3 id="historyTitle" data-i18n="historyTitle">Recent calculations</h3>
+              <span data-i18n="lastThree">LAST 3</span>
+            </div>
+            <div class="history-list" id="historyList"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
