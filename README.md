@@ -1,90 +1,73 @@
-# deliverycalc.md
+# Delivery Cost Calculator
 
-**deliverycalc.md** is a clean, responsive delivery cost calculator for estimating the real price of an order from China before buying.
+![HTML](https://img.shields.io/badge/HTML-5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)
+![Responsive](https://img.shields.io/badge/Responsive-Design-2ECC71?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-222222?style=for-the-badge&logo=github&logoColor=white)
 
-The project is built with plain **HTML**, **CSS**, and **JavaScript**. No backend, no database, no frameworks, and no build step.
+**Delivery Cost Calculator** — минималистичный сайт-калькулятор доставки и итоговой стоимости заказа из Китая.
 
-## What It Does
+Пользователь вводит цену товара, доставку, вес, комиссию агента, страховку и курс USD к MDL, а сайт рассчитывает итоговую стоимость в долларах и молдавских леях.
 
-deliverycalc.md helps calculate the full order cost using:
+## Preview
 
-- product price
-- local shipping in China
-- international shipping
-- package weight
-- agent fee
-- insurance percentage
-- USD to MDL exchange rate
+![Project Preview](./preview.png)
 
-The calculator shows:
+![Calculator Preview](./preview-calculator.png)
 
-- total cost in USD
-- total cost in MDL
-- price per kilogram
-- insurance value
-- order verdict: Good deal, Normal price, or Expensive order
+## Live Demo
+
+🔗 [Открыть сайт](https://delivery12335.github.io/deliverycalc/)
 
 ## Features
 
-- Minimal premium UI with mint and dark chocolate palette
-- Responsive layout for desktop and mobile
-- EN / RU language switcher
-- Instant calculation with validation
-- Clear button that resets fields to defaults
-- Copy result button
-- Local history of the last 3 calculations
-- History is saved in `localStorage`
-- Works by opening `index.html` directly
-- Ready for GitHub Pages
+- Calculate total order cost
+- Convert USD to MDL
+- Calculate price per kg
+- Add insurance percentage
+- Save last 3 calculations in LocalStorage
+- Copy result to clipboard
+- RU / EN language switcher
+- Responsive design
 
-## Formula
+## Tech Stack
 
-```text
-subtotal = product price + china shipping + international shipping + agent fee
-insuranceValue = subtotal * insurance / 100
-totalUsd = subtotal + insuranceValue
-totalMdl = totalUsd * usdToMdlRate
-pricePerKg = totalUsd / weight
-```
-
-## Default Values
-
-```text
-Product price: 51
-China shipping: 0
-International shipping: 35
-Weight: 1.2
-Agent fee: 5
-Insurance: 3
-USD to MDL rate: 17.8
-```
+- **HTML** — структура страницы
+- **CSS** — адаптивный интерфейс и визуальный стиль
+- **JavaScript** — логика калькулятора
+- **LocalStorage** — история последних расчетов
+- **GitHub Pages** — публикация сайта
 
 ## Project Structure
 
 ```text
-deliverycalc/
+delivery-cost-calculator/
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
 ```
 
-## Deploy To GitHub Pages
+## How to Run
 
-1. Create a GitHub repository named `deliverycalc`.
-2. Upload these files to the repository root.
-3. Open repository `Settings`.
-4. Go to `Pages`.
-5. Choose `Deploy from a branch`.
-6. Select branch `main` and folder `/root`.
-7. Save.
+1. Download or clone repository.
+2. Open `index.html` in your browser.
 
-Your public website will be available at:
+No backend, database, build tools, npm, or frameworks are required.
+
+## Formula
 
 ```text
-https://YOUR_USERNAME.github.io/deliverycalc/
+subtotal = productPrice + chinaShipping + internationalShipping + agentFee
+insuranceValue = subtotal * insurance / 100
+totalUsd = subtotal + insuranceValue
+totalMdl = totalUsd * usdToMdlRate
+pricePerKg = totalUsd / weight
 ```
 
-## Custom Domain
+## Author
 
-If you own the domain `deliverycalc.md`, you can connect it later in GitHub Pages settings and configure DNS for the domain.
+Made by **Max**
+
+GitHub: [delivery12335](https://github.com/delivery12335)
