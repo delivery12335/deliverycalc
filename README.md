@@ -6,7 +6,7 @@
 ![Responsive](https://img.shields.io/badge/Responsive-Design-2ECC71?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-222222?style=for-the-badge&logo=github&logoColor=white)
 
-**Delivery Cost Calculator** — минималистичный сайт-калькулятор доставки и итоговой стоимости заказа из Китая.
+**Delivery Cost Calculator** - минималистичный сайт-калькулятор доставки и итоговой стоимости заказа из Китая.
 
 Пользователь вводит цену товара, доставку, вес, комиссию агента, страховку и курс USD к MDL, а сайт рассчитывает итоговую стоимость в долларах и молдавских леях.
 
@@ -18,26 +18,26 @@
 
 ## Live Demo
 
-🔗 [Открыть сайт](https://delivery12335.github.io/deliverycalc/)
+[Открыть сайт](https://delivery12335.github.io/deliverycalc/)
 
 ## Features
 
-- Calculate total order cost
-- Convert USD to MDL
-- Calculate price per kg
-- Add insurance percentage
-- Save last 3 calculations in LocalStorage
-- Copy result to clipboard
-- RU / EN language switcher
-- Responsive design
+- Расчет итоговой стоимости заказа
+- Конвертация USD в MDL
+- Расчет цены за килограмм
+- Добавление процента страховки
+- Сохранение последних 3 расчетов в LocalStorage
+- Копирование результата в буфер обмена
+- Переключатель языка RU / EN
+- Адаптивный дизайн для телефона и ПК
 
 ## Tech Stack
 
-- **HTML** — структура страницы
-- **CSS** — адаптивный интерфейс и визуальный стиль
-- **JavaScript** — логика калькулятора
-- **LocalStorage** — история последних расчетов
-- **GitHub Pages** — публикация сайта
+- **HTML** - структура страницы
+- **CSS** - адаптивный интерфейс и визуальный стиль
+- **JavaScript** - логика калькулятора
+- **LocalStorage** - история последних расчетов
+- **GitHub Pages** - публикация сайта
 
 ## Project Structure
 
@@ -51,10 +51,10 @@ delivery-cost-calculator/
 
 ## How to Run
 
-1. Download or clone repository.
-2. Open `index.html` in your browser.
+1. Скачайте или клонируйте репозиторий.
+2. Откройте файл `index.html` в браузере.
 
-No backend, database, build tools, npm, or frameworks are required.
+Backend, база данных, сборщики, npm и фреймворки не нужны.
 
 ## Formula
 
