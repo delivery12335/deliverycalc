@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://delivery12335.github.io/deliverycalc/sitemap-main.xml
-Sitemap: https://delivery12335.github.io/deliverycalc/sitemap.txt
